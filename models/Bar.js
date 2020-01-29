@@ -12,6 +12,7 @@ class Bar extends Model {
   }
   static get relationMappings() {
     const User = require("./User");
+    const Product = require("./Product");
     return {
       user: {
         relation: Model.BelongsToOneRelation,
@@ -19,6 +20,14 @@ class Bar extends Model {
         join: {
           from: "bars.users_id",
           to: "users.id"
+        }
+      },
+      products: {
+        relation: Model.HasManyRelation,
+        modelClass: Product,
+        join: {
+          from: "bars.id",
+          to: "products.bars_id"
         }
       }
     };

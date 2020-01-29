@@ -7,6 +7,7 @@ const helmet = require("helmet");
 const users = require("./routes/users");
 const auth = require("./routes/auth");
 const bars = require("./routes/bars");
+const products = require("./routes/products");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(helmet());
 app.use("/api/users", users);
 app.use("/api/auth", auth);
 app.use("/api/bars", bars);
+app.use("/api/products", products);
 
 const PORT = process.env.PORT || 5000;
 
