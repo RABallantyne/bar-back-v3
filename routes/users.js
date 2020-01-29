@@ -15,25 +15,9 @@ router.use(cors());
 
 router.get("/", async (req, res) => {
   try {
-    const users = await User.query().select("username", "email", "id");
+    const users = await User.query().withGraphFetched("[bars]");
+    // .select("username", "email", "id");
     res.send(users);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
-  }
-});
-
-//@route GET /users/:id
-//@desc see one user and their bars
-//@access Private (eventually)
-
-router.get("/:id", async (req, res) => {
-  try {
-    const user = await User.query()
-      .findById(req.params.id)
-      .select("username", "email", "id")
-      .withGraphFetched("[bars]");
-    res.send(user);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
