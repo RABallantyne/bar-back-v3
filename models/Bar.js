@@ -6,23 +6,23 @@ const knexConnection = Knex(connection);
 
 Model.knex(knexConnection);
 
-class User extends Model {
+class Bar extends Model {
   static get tableName() {
-    return "users";
+    return "bars";
   }
   static get relationMappings() {
-    const Bar = require("./Bar");
+    const User = require("./User");
     return {
-      bars: {
-        relation: Model.HasManyRelation,
-        modelClass: Bar,
+      user: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: User,
         join: {
-          from: "users.id",
-          to: "bars.users_id"
+          from: "bars.users_id",
+          to: "users.id"
         }
       }
     };
   }
 }
 
-module.exports = User;
+module.exports = Bar;
