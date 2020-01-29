@@ -27,5 +27,6 @@
   "devDependencies": {
     "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
-  }
+  },
+  "proxy": "https://bar-back-api-v3.herokuapp.com/"
 }
