@@ -9,7 +9,7 @@ router.use(cors());
 router.get("/", async (req, res) => {
   try {
     const users = await User.query();
-    res.json(users);
+    res.send(users);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
