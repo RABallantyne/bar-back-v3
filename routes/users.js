@@ -3,6 +3,8 @@ const router = express.Router();
 
 const User = require("../models/User");
 
+router.use(cors());
+
 router.get("/", async (req, res) => {
   try {
     const users = await User.query();
