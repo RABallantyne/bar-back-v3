@@ -29,6 +29,31 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
+//@route  GET api/bars/:bar_id
+//@desc   Get details on selected bar
+//@access Private
+
+router.get("/:bar_id", auth, async (req, res) => {
+  try {
+    const user = await User.query().findById(req.user.id);
+    let bar = await user.$relatedQuery("bars").where("id", req.params.bar_id);
+
+    if (bar.length === 0) {
+      return res
+        .status(400)
+        .json({ msg: "You don't have permission to view that bar" });
+    }
+    bar = await Bar.query()
+      .findById(req.params.bar_id)
+      .withGraphFetched("[products]");
+
+    res.send(bar);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 //@route  POST api/bars/
 //@desc   Create a new bar
 //@access Private

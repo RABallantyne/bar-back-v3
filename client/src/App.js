@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import "./App.css";
+import './css/style.css';
 
 const App = () => (
   <>
-    {" "}
+    {' '}
     <h1>barback!(again)</h1>
   </>
 );

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700');
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #886c6c;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+/* Override the .audioplayer properties */
+.info-img {
+  max-width: 100%;
+  border: 1px #886c6c solid;
+  box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.25);
+  margin: 1px;
+  border-radius: 2px;
+}
+.container {
+  font-weight: 100;
+  width: 100%;
+  margin: 0 auto;
+  color: #886c6c;
+  background-color: #a78c4c;
+  padding: 5px;
+}
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background: #001514;
+  color: #ccc;
+  clear: both;
+  margin: 0;
+}
+header {
+  margin-bottom: 2px;
+}
+footer {
+  font-weight: 100;
+  width: 100%;
+  margin: 0 auto;
+  color: #886c6c;
+  background-color: #a78c4c;
+  padding: 5px;
+  justify-content: center;
+  margin-top: 2px;
+}
+footer {
+  display: flex;
+}
+ul.menu {
+  list-style-type: none;
+  display: flex;
+}
+ul.menu li {
+  margin: 5px 2px;
+  background: #6b0504;
+  border-radius: 2px;
+  line-height: 1.7;
+  padding: 5px;
+  cursor: pointer;
+}
+ul.menu li:hover {
+  background: #9c0706;
+}
+ul.menu li a {
+  text-decoration: none;
+  color: #ddd;
+}
+@media (min-width: 768px) {
+  ul.menu li {
+    color: blue;
+  }
+}
+#main {
+  display: block;
+}
+.song {
+  border: 2px #a78c4c dotted;
+  width: 175px;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 2px 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.song .title {
+  font-weight: 700;
+}
+.audioplayer .audioplayer-bar {
+  display: none;
+  width: 0;
+}
+.audioplayer .audioplayer-time.audioplayer-time-duration {
+  display: none;
+}
+@media only screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .info-img {
+    float: right;
+    max-width: 80px;
+  }
+  .song {
+    width: 95%;
+  }
+  .audioplayer .audioplayer-bar {
+    display: block;
+    width: auto;
+  }
+  .audioplayer .audioplayer-time.audioplayer-time-duration {
+    display: block;
+  }
+}
+@media only screen and (min-width: 989px) {
+  .container {
+    width: 989px;
+  }
+  .song {
+    width: 330px;
+  }
+}
+.foo {
+  width: 100%;
+}
