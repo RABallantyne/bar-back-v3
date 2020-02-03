@@ -3,11 +3,6 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
-//import routes
-const users = require('./routes/users');
-const auth = require('./routes/auth');
-const bars = require('./routes/bars');
-const products = require('./routes/products');
 
 const app = express();
 
@@ -16,7 +11,12 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(helmet());
 
-//live routes
+//import routes
+const users = require('./routes/users');
+const auth = require('./routes/auth');
+const bars = require('./routes/bars');
+const products = require('./routes/products');
+//define routes
 app.use('/api/users', users);
 app.use('/api/auth', auth);
 app.use('/api/bars', bars);
