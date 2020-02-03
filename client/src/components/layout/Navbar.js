@@ -11,7 +11,7 @@ const Navbar = () => {
       </h1>
       <ul>
         <li>
-          <Link to='/register'>Sign Up</Link>
+          <Link to='/register'>Register</Link>
         </li>
         <li>
           <Link to='/login'>Login</Link>
